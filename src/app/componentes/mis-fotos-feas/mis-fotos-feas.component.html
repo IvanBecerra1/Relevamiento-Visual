@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titulo-principal" style="margin-top: 5px;">
+      <h1>Mis fotos feas</h1>
+      <h3 class="subtitulo">{{ this.capitalize(this.usuarioNombre) }}</h3>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<br>
+<ion-content fullscreen class="fondo-negro">
+  <div class="visor-foto" (touchstart)="iniciarSwipe($event)" (touchend)="terminarSwipe($event)">
+
+    <div *ngIf="misFotos.length === 0" class="mensaje-sin-fotos">
+      <ion-icon name="alert-circle-outline" style="font-size: 36px; color: #ffc107;"></ion-icon>
+      <h2>No has subido fotos aún</h2>
+    </div>
+
+    <ng-container *ngIf="misFotos.length > 0">
+      <div class="indicadores">
+        <span
+          *ngFor="let foto of misFotos; let i = index"
+          [ngClass]="{ 'punto': true, 'activo': i === indiceActual }"
+        ></span>
+      </div>
+
+      <app-card-imagen
+        *ngIf="fotoActual"
+        [usuario]="fotoActual.usuario"
+        [urlImagen]="fotoActual.urlImagen"
+        [fecha]="fotoActual.fecha"
+        [votos]="fotoActual.votos">
+      </app-card-imagen>
+    </ng-container>
+
+  </div>
+</ion-content>
+
+<ion-footer class="custom-tabbar">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button (click)="navegarA('feo')">
+        <img src="../../../assets/iconos/angulo-izquierdo.png" class="tab-icon" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

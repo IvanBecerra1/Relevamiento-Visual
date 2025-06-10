@@ -1,0 +1,120 @@
+canvas {
+  display: block;
+  width: 100% !important;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.grafico-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  gap: 1.5rem;
+  min-height: 85vh;
+}
+
+.contenedor-card {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fondo-negro {
+  --background: url('../../../assets/imagenes/cosas-lindas.jpg') no-repeat center center / cover;
+  background-color: transparent;
+  color: white;
+}
+/* HEADER SEMITRANSLÚCIDO CON SAFE AREA */
+ion-header {
+  padding-top: var(--ion-safe-area-top, 16px); // espacio seguro
+  background: transparent;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 10;
+}
+ion-toolbar {
+  --background: rgba(0, 0, 0, 0.6);
+  --color: white;
+  color: white;
+  text-align: center;
+  min-height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0; // quitar padding interno de ion-toolbar
+}
+
+.titulo-principal {
+  padding-top: 30px; // ✅ Siempre visible, incluso en ionic serve
+  padding-bottom: 10px;
+  text-align: center;
+  color: white;
+
+  div:first-child {
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .subtitulo {
+    font-size: 25px;
+    font-weight: normal;
+    color: white;
+    margin-top: 4px;
+  }
+}
+ion-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: white !important;
+  text-align: center;
+}
+
+.subtitulo {
+  font-size: 14px;
+  font-weight: normal;
+  color: white;
+  margin-top: 4px;
+}
+
+/* CONTENIDO CON ESPACIO DESPUÉS DEL HEADER */
+ion-content.fondo-negro {
+  --padding-top: calc(var(--ion-safe-area-top, 16px) + 56px);
+}
+
+/* FOOTER / BARRA INFERIOR */
+.custom-tabbar ion-toolbar {
+  --background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  ion-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  ion-button {
+    --background: transparent;
+    display: flex;
+    align-items: center;
+  }
+
+  .tab-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    filter: brightness(0) invert(1); // icono blanco
+  }
+}

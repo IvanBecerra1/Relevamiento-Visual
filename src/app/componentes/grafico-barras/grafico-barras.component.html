@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titulo-principal" style="margin-top: 10px;">
+      <div>Estadísticas</div>
+      <div class="subtitulo">Cosas feas</div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="fondo-negro">
+  <div class="grafico-container">
+    <canvas baseChart
+      [data]="barChartData"
+      [type]="'bar'"
+      [options]="barChartOptions">
+    </canvas>
+    
+    <ion-button  *ngIf="fotoSeleccionada" fill="outline" color="light" class="buton-cerrar" (click)="cerrarSeleccion()">Cerrar</ion-button>
+    <app-card-imagen
+      *ngIf="fotoSeleccionada"
+      [usuario]="fotoSeleccionada.uid"
+      [urlImagen]="fotoSeleccionada.urlImagen || fotoSeleccionada.url" class="imagen-post"
+      [fecha]="fechaFormateada(fotoSeleccionada.fecha)"
+      [votos]="fotoSeleccionada.votos ?? 0"
+      [yaVotado]="fotoSeleccionada.yaVotado ?? false"
+      [fotoId]="fotoSeleccionada.id">
+    </app-card-imagen>
+  </div>
+</ion-content>
+
+<ion-footer class="custom-tabbar">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button (click)="navegarA('feo')">
+        <img src="../../../assets/iconos/angulo-izquierdo.png" class="tab-icon" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

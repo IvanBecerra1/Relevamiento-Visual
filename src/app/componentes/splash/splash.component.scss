@@ -1,0 +1,27 @@
+.splash-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #0d1a2b; // o el color que combine con tu animación
+  }
+  
+  .splash-text {
+    text-align: center;
+    margin-top: 20px;
+  
+    h1 {
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      margin: 0;
+    }
+  
+    p {
+      color: #cccccc;
+      font-size: 18px;
+      margin: 4px 0 0 0;
+    }
+  }
+  

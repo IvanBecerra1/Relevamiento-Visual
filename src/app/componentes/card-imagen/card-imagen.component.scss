@@ -1,0 +1,107 @@
+.post-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding-bottom: 10px;
+  margin: 1rem;
+
+  ion-item {
+    --inner-padding-end: 0;
+  }
+
+  .avatar-pequeno img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .nombre-usuario {
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .imagen-post {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  .acciones {
+    padding: 8px 12px;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .icono-accion {
+    font-size: 22px;
+    color: #222;
+  }
+
+  .fecha-publicacion {
+    font-size: 25px;
+    color: black;
+    margin-left: 8px;
+  }
+}
+
+.icono-like {
+  width: 47px;
+  height: 47px;
+  object-fit: contain;
+  margin-right: 6px;
+  filter: brightness(0) saturate(100%) invert(18%) sepia(90%) saturate(7526%) hue-rotate(356deg) brightness(96%) contrast(103%);
+}
+
+.like-container {
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+}
+
+.contador-likes {
+  font-size: 20px;
+  color: #333;
+  font-weight: 500;
+}
+
+.icono-boton {
+  --padding-start: 0;
+  --padding-end: 0;
+  --background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  color: #333;
+
+  .icono-like {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+}
+
+.like-rojo {
+  filter: hue-rotate(0deg) saturate(100%) brightness(1.2);
+}
+
+.like-gris {
+  filter: grayscale(100%);
+}
+.like-fecha-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 12px;
+}
+
+.fecha-publicacion {
+  font-size: 199px;
+  color: black;
+  margin-left: auto;
+}

@@ -1,0 +1,74 @@
+
+
+<ion-content class="ion-padding" >
+  <div class="container">
+
+  
+    <h1>Iniciar sesión</h1>
+    <p class="subtitulo">Ingresá a tu cuenta</p>
+
+  <!-- LOTTIE ANIMACIÓN -->
+  <div class="lottie-container">
+    <ng-lottie [options]="opcionesAnimacion"></ng-lottie>
+  </div>
+
+
+    <div class="user-type">
+      <ion-button
+        shape="round"
+        [fill]="usuarioTipo === 1 ? 'solid' : 'outline'"
+        color="primary"
+        (click)="seleccionarUsuario(1)">
+        Normal
+      </ion-button>
+      <ion-button
+        shape="round"
+        [fill]="usuarioTipo === 2 ? 'solid' : 'outline'"
+        color="primary"
+        (click)="seleccionarUsuario(2)">
+        Tester
+      </ion-button>
+      <ion-button
+        shape="round"
+        [fill]="usuarioTipo === 3 ? 'solid' : 'outline'"
+        color="primary"
+        (click)="seleccionarUsuario(3)">
+        Admin
+      </ion-button>
+    </div>
+
+    <form [formGroup]="form" (ngSubmit)="login()">
+      <ion-item lines="inset">
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input type="email" formControlName="correo"
+        (ionFocus)="moverArriba()"
+        (ionBlur)="moverAbajo()"></ion-input>
+      </ion-item>
+      <ion-note *ngIf="form.get('correo')?.invalid && form.get('correo')?.touched" color="danger">
+        Ingresá un email válido.
+      </ion-note>
+
+      <ion-item lines="inset">
+        <ion-label position="floating">Contraseña</ion-label>
+        <!--<ion-input type="password" formControlName="clave"></ion-input>!-->
+        <ion-input
+        type="password"
+        formControlName="clave"
+        (ionFocus)="moverArriba()"
+        (ionBlur)="moverAbajo()">
+        </ion-input>
+      </ion-item>
+      <ion-note *ngIf="form.get('clave')?.invalid && form.get('clave')?.touched" color="danger">
+        Mínimo 6 caracteres.
+      </ion-note>
+
+      <ion-button expand="block" shape="round" color="primary" class="boton" type="submit" [disabled]="enProceso">
+        Iniciar sesión
+      </ion-button>
+    </form>
+
+    <p class="texto-login">
+      ¿No tenés cuenta? <a (click)="registro()">Registrate</a>
+    </p>
+  </div>
+</ion-content>

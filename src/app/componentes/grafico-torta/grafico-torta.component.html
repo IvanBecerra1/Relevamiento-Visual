@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-title class="titulo-principal" >
+      <div>Estadísticas</div>
+      <div class="subtitulo">Cosas lindas</div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="fondo-negro">
+  <div class="grafico-container">
+    <canvas baseChart
+      [data]="data"
+      [type]="'doughnut'"
+      [options]="options"
+      (chartClick)="onChartClick($event)">
+    </canvas>
+
+    <div *ngIf="fotoSeleccionada" class="contenedor-card">
+      <ion-button fill="outline" color="danger" (click)="cerrarSeleccion()">Cerrar</ion-button>
+      <app-card-imagen
+        [usuario]="fotoSeleccionada.uid"
+        [urlImagen]="fotoSeleccionada.url"
+        [fecha]="fechaFormateada(fotoSeleccionada.fecha)"
+        [votos]="fotoSeleccionada.votos ?? 0"
+        [yaVotado]="fotoSeleccionada.yaVotado ?? false"
+        [fotoId]="fotoSeleccionada.id">
+      </app-card-imagen>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer class="custom-tabbar">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button (click)="navegarA('lindo')">
+        <img src="../../../assets/iconos/angulo-izquierdo.png" class="tab-icon" />
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

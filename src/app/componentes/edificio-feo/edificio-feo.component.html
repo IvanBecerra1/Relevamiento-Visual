@@ -1,0 +1,56 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="titulo-principal"  style="margin-top: 10px;">
+      
+      <h1>Publicaciones
+      </h1>
+      <h2 class="subtitulo">Cosas feas</h2>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content [fullscreen]="true">
+  
+    <div class="botones-minimalistas">
+  
+      <ion-button class="boton-cuadrado" fill="solid">
+        <img  src="../../../assets/iconos/estadistica.png" (click)="this.irGrafico()" slot="icon-only">
+      </ion-button>
+  
+      <ion-button class="boton-cuadrado" fill="solid">
+        <img src="../../../assets/iconos/galeria.png" (click)="redireccionar('/galeriaFeo')" slot="icon-only">
+      </ion-button>
+    </div>
+  
+    <!-- Cards de imagen -->
+    <app-card-imagen
+    *ngFor="let foto of fotosLindas"
+    [usuario]="foto.usuario"
+    [urlImagen]="foto.urlImagen"
+    [fecha]="this.fechaFormateada(foto.fecha)"
+    [votos]="foto.votos"
+    [fotoId]="foto.id"
+    [yaVotado]="foto.yaVotado">
+  </app-card-imagen>
+
+  </ion-content>
+  <ion-footer class="custom-tabbar">
+    <ion-toolbar>
+      <ion-buttons class="footer-buttons">
+        <ion-button (click)="redireccionar('/home')">
+          <img src="../../../assets/iconos/angulo-izquierdo.png" class="tab-icon" />
+        </ion-button>
+  
+  
+        <ion-button (click)="this.subirFeo()">
+          <img src="../../../assets/iconos/camara.png" class="tab-icon" />
+        </ion-button>
+
+        
+        <ion-button (click)="desconectarse()">
+          <img src="../../../assets/iconos/salida.png" class="tab-icon" />
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>

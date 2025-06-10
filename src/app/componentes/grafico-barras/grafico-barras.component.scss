@@ -1,0 +1,152 @@
+canvas {
+  display: block;
+  width: 100% !important;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.grafico-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  gap: 1.5rem;
+  min-height: 85vh;
+}
+
+.fondo-negro {
+  --background: url('../../../assets/imagenes/cosas-feas.jpg') no-repeat center center / cover;
+  background-color: transparent;
+  color: white;
+}
+
+ion-header {
+  padding-top: var(--ion-safe-area-top, 16px);
+  background: transparent;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+ion-toolbar {
+  --background: rgba(0, 0, 0, 0.6);
+  --color: white;
+  color: white;
+  text-align: center;
+  min-height: 56px;
+  padding-top: 6px;
+}
+
+ion-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: white !important;
+  text-align: center;
+}
+
+.subtitulo {
+  font-size: 25px;
+  font-weight: normal;
+  color: white;
+  margin-top: 4px;
+}
+
+ion-content.fondo-negro {
+  --padding-top: calc(var(--ion-safe-area-top, 16px) + 56px);
+}
+
+.custom-tabbar ion-toolbar {
+  --background: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.custom-tabbar ion-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.custom-tabbar ion-button {
+  --background: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.tab-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.custom-card {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+ion-card.post-card {
+  width: 100%;
+  background: #1c1c1c;
+  color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.imagen-post {
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+}
+
+.nombre-usuario {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.acciones {
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.titulo-principal {
+  div:first-child {
+    font-size: 40px;
+    font-weight: bold;
+  }
+}
+
+.fecha-publicacion {
+  font-size: 12px;
+  color: #ccc;
+  text-align: right;
+  padding-right: 1rem;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.buton-cerrar {
+  background-color: red;
+  border-radius: 20px;
+  
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}

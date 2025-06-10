@@ -1,0 +1,35 @@
+<ion-header *ngIf="mostrarHeader">
+  <ion-toolbar>
+    <ion-title>Foto seleccionada</ion-title>
+    <ion-button slot="end">
+      <ion-button (click)="cerrar.emit()">Cerrar</ion-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-card class="post-card">
+  <ion-item lines="none">
+    <ion-avatar slot="start" class="avatar-pequeno">
+      <img src="../../../assets/iconos/man.png" />
+    </ion-avatar>
+    <ion-label>
+      <h2 class="nombre-usuario">{{ this.capitalize(this.usuario.split('@')[0]) }}</h2>
+    </ion-label>
+  </ion-item>
+
+  <img [src]="urlImagen" class="imagen-post" />
+
+ <ion-row class="acciones">
+  <div class="like-fecha-container">
+    <ion-button fill="clear" class="icono-boton" (click)="votar()">
+      <ion-icon
+        [name]="yaVotado ? 'heart' : 'heart-outline'"
+        class="icono-like"
+        color="{{ yaVotado ? 'danger' : 'medium' }}">
+      </ion-icon>
+      <span class="contador-likes">{{ votos }}</span>
+    </ion-button>
+
+    <ion-text class="fecha-publicacion">{{ fecha }}</ion-text>
+  </div>
+</ion-row>
+</ion-card>

@@ -1,0 +1,62 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; 
+@import '@ionic/angular/css/palettes/dark.system.css';*/
+:root {
+    --ion-background-color: #ffffff;
+    --ion-text-color: #000000;
+  
+    --ion-color-primary: #4a90e2;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-step-50: #f2f2f2;
+  
+    // Otros colores base si querés ajustar más
+      --color-fondo: #0b1624;
+      --color-card: #1a293d;
+      --color-borde: #3e5a72;
+      --color-primario: #6c85a2;
+      --color-texto: #ffffff;
+      --color-texto-suave: #cbd5e1;
+      --color-error: #ff6b6b;
+      --color-lindo: #6FCFEB;
+      --color-lindo-01: #93dcf0;
+      --color-lindo-02:  #b3e8f5;
+      --color-lindo-03: #b3e8f5;
+    
+  }
+  * {
+  font-family: 'Merienda', cursive !important;
+}

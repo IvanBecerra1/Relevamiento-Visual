@@ -1,0 +1,7 @@
+{
+  "name": "pps_login_01",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

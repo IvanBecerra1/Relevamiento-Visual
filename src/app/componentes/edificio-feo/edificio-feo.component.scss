@@ -1,0 +1,99 @@
+ion-content {
+  --background: url('../../../assets/imagenes/cosas-feas.jpg') no-repeat center center / cover;
+  background-color: transparent;
+  color: white;
+}
+
+ion-header {
+  position: relative;
+  background: transparent;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+ion-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+ion-toolbar {
+  --background: transparent;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+}
+
+ion-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.titulo-principal .subtitulo {
+  font-size: 25px;
+  font-weight: normal;
+  color: white;
+}
+
+/* Botones principales */
+.botones-minimalistas {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.boton-cuadrado {
+  width: 60px;
+  height: 60px;
+  --border-radius: 12px;
+  --background: var(--color-fondo);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.icono-boton {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(12%) sepia(88%) saturate(1200%) hue-rotate(175deg);
+}
+
+/* Footer translúcido */
+.custom-tabbar ion-toolbar {
+  --background: rgba(0, 0, 0, 0.5); /* negro translúcido */
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.custom-tabbar ion-button {
+  --background: transparent;
+}
+
+.tab-icon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); // blanco
+}

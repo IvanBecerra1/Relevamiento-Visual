@@ -1,0 +1,56 @@
+<ion-content class="ion-padding">
+  <div class="container">
+    <h1>Registrarse</h1>
+    <p class="subtitulo">Crear nueva cuenta</p>
+
+      <!-- LOTTIE ANIMACIÓN -->
+  <div class="lottie-container">
+    <ng-lottie [options]="opcionesAnimacion"></ng-lottie>
+  </div>
+
+    <form [formGroup]="formRegistro" (ngSubmit)="registrar()">
+      <ion-item lines="inset">
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input type="text" formControlName="nombre"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="formRegistro.get('nombre')?.touched && formRegistro.get('nombre')?.invalid">
+        El nombre es requerido
+      </ion-note>
+
+      <ion-item lines="inset">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" formControlName="correo"   (ionFocus)="moverArriba()"
+        (ionBlur)="moverAbajo()"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="formRegistro.get('correo')?.touched && formRegistro.get('correo')?.invalid">
+        Ingresá un correo válido
+      </ion-note>
+
+      <ion-item lines="inset">
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input type="password" formControlName="clave"  (ionFocus)="moverArriba()"
+        (ionBlur)="moverAbajo()"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="formRegistro.get('clave')?.touched && formRegistro.get('clave')?.invalid">
+        Mínimo 6 caracteres
+      </ion-note>
+
+      <ion-item lines="inset">
+        <ion-label position="floating">Confirmar Contraseña</ion-label>
+        <ion-input type="password" formControlName="claveConfirmacion"  (ionFocus)="moverArriba()"
+        (ionBlur)="moverAbajo()"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="formRegistro.errors?.['clavesDistintas'] && formRegistro.get('claveConfirmacion')?.touched">
+        Las contraseñas no coinciden
+      </ion-note>
+
+      <ion-button expand="block" shape="round" color="primary" class="boton" type="submit" [disabled]="enProceso">
+        Registrarse
+      </ion-button>
+    </form>
+
+    <p class="texto-login">
+      ¿Ya tenés una cuenta? <a (click)="inciarSesion()">Iniciar sesión</a>
+    </p>
+  </div>
+</ion-content>
